@@ -1,0 +1,27 @@
+{
+    "name": "meross-ts",
+    "version": "1.0.0",
+    "description": "A TypeScript implementation for controlling Meross devices.",
+    "private": true,
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+        "dev": "bun run src/program.ts",
+        "build-node": "bun build src/meross_controller.ts --outfile dist/index.js --target node",
+        "build-bun": "bun build src/meross_controller.ts --outfile dist/index.js --target bun",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/node": "latest",
+        "typescript": "latest"
+    },
+    "dependencies": {
+        "@inquirer/prompts": "^7.8.0",
+        "chalk": "^5.5.0",
+        "meross-cloud-ts": "^2.0.0"
+    },
+    "patchedDependencies": {
+        "meross-cloud-ts@2.0.0": "patches/meross-cloud-ts@2.0.0.patch"
+    }
+}
